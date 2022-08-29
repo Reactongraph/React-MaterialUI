@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import compose from 'recompose/compose';
-import pure from 'recompose/pure';
+import { compose } from 'recompose';
+import { pure } from 'recompose';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
@@ -14,8 +14,8 @@ const styles = theme => ({
     backgroundColor: '#000',
   },
   layoutBody: {
-    marginTop: theme.spacing.unit * 8,
-    marginBottom: theme.spacing.unit * 8,
+    marginTop: theme.spacing(8),
+    marginBottom: theme.spacing(8),
     display: 'flex',
   },
   iconsWrapper: {
@@ -31,7 +31,7 @@ const styles = theme => ({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: theme.palette.warning.main,
-    marginRight: theme.spacing.unit,
+    marginRight: theme.spacing(),
     '&:hover': {
       backgroundColor: theme.palette.warning.dark,
     },
@@ -42,11 +42,12 @@ const styles = theme => ({
     paddingLeft: 0,
   },
   listItem: {
-    paddingTop: theme.spacing.unit / 2,
-    paddingBottom: theme.spacing.unit / 2,
+    paddingTop: theme.spacing() / 2,
+    paddingBottom: theme.spacing() / 2,
+
   },
   language: {
-    marginTop: theme.spacing.unit,
+    marginTop: theme.spacing(),
     width: 150,
   },
 });
@@ -57,7 +58,7 @@ const AppFooter = (props) => {
   return (
     <Typography component="footer" className={classes.root}>
       <LayoutBody className={classes.layoutBody} width="large">
-        <Grid container spacing={40}>
+        <Grid container spacing={10}>
           <Grid item xs={6} sm={4} md={2} className="w3_agile-footer1 f1">
             <h2>
               Adventure
@@ -116,31 +117,31 @@ const AppFooter = (props) => {
             <Typography variant="h6" align="center" gutterBottom className="footerColorHeading">
               Follow Us
             </Typography>
-            <ul class="footer-social-icons">
+            <ul className="footer-social-icons">
               <li>
                 <Link href="#" className="hover_icon">
-                  <i class="fa icon1 fa-facebook icons" aria-hidden="true"></i>
+                  <i className="fa icon1 fa-facebook icons" aria-hidden="true"></i>
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover_icon">
-                  <i class="fa icon2 fa-twitter icons" aria-hidden="true"></i>
+                  <i className="fa icon2 fa-twitter icons" aria-hidden="true"></i>
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover_icon">
-                  <i class="fa icon3 fa-google-plus icons" aria-hidden="true"></i>
+                  <i className="fa icon3 fa-google-plus icons" aria-hidden="true"></i>
                 </Link>
               </li>
               <li>
                 <Link href="#">
-                  <i class="fa icon3 fa-linkedin icon4 icons" aria-hidden="true"></i>
+                  <i className="fa icon3 fa-linkedin icon4 icons" aria-hidden="true"></i>
                 </Link>
               </li>
             </ul>
           </Grid>
-          <Grid item md={12} className="footerborder">
-            <Typography variant="caption" align="center" className="footerColorHeading">
+          <Grid item md={12} className="footerborder" style={{ textAlign:'center'}}>
+            <Typography variant="caption" align='center' className="footerColorHeading">
               <Link href="#" title="Flaticon">
                 Copyright @ www.mymaterialtest.com
               </Link>
